@@ -2,39 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ChatGPT-inspired design system for prompt sharing app */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 206 24% 9%;
 
+    --chat-background: 220 13% 96%;
+    --chat-surface: 0 0% 100%;
+    --chat-border: 217 12% 84%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 206 24% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 206 24% 9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 142 76% 32%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 13% 91%;
+    --secondary-foreground: 206 24% 9%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 13% 95%;
+    --muted-foreground: 215 20% 54%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 217 12% 84%;
+    --input: 217 12% 84%;
+    --ring: 142 76% 36%;
+
+    --gradient-chat: linear-gradient(135deg, hsl(220, 13%, 96%), hsl(0, 0%, 100%));
+    --gradient-primary: linear-gradient(135deg, hsl(142, 76%, 36%), hsl(142, 76%, 32%));
+    --gradient-surface: linear-gradient(180deg, hsl(0, 0%, 100%), hsl(220, 13%, 98%));
+    
+    --shadow-chat: 0 2px 8px -2px hsl(206, 24%, 9%, 0.1);
+    --shadow-input: 0 0 0 2px hsl(142, 76%, 36%, 0.1);
+    --shadow-button: 0 2px 4px -1px hsl(142, 76%, 36%, 0.2);
+
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-typing: opacity 0.1s ease-in-out;
 
     --radius: 0.5rem;
 

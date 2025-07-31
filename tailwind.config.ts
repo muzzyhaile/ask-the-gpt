@@ -24,9 +24,13 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				'chat-background': 'hsl(var(--chat-background))',
+				'chat-surface': 'hsl(var(--chat-surface))',
+				'chat-border': 'hsl(var(--chat-border))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					hover: 'hsl(var(--primary-hover))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -62,6 +66,20 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			backgroundImage: {
+				'gradient-chat': 'var(--gradient-chat)',
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-surface': 'var(--gradient-surface)'
+			},
+			boxShadow: {
+				'chat': 'var(--shadow-chat)',
+				'input': 'var(--shadow-input)',
+				'button': 'var(--shadow-button)'
+			},
+			transitionProperty: {
+				'smooth': 'var(--transition-smooth)',
+				'typing': 'var(--transition-typing)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
