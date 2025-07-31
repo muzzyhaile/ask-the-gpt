@@ -55,37 +55,57 @@ const Index = () => {
   console.log("Index component rendering..."); // Debug log
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="bg-white border-b">
-        <div className="container mx-auto px-4 py-6">
-          <div className="text-center space-y-2">
-            <h1 className="text-4xl font-bold text-gray-900 tracking-tight">
-              Prompt That For You
-            </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              For all those people who find it more convenient to ask you to ask ChatGPT than to ask ChatGPT themselves.
-            </p>
+    <div className="min-h-screen bg-gray-900 text-white">
+      {/* ChatGPT-style header */}
+      <div className="border-b border-gray-700 bg-gray-900">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-sm">P</span>
+              </div>
+              <h1 className="text-xl font-medium text-white">
+                Prompt That For You
+              </h1>
+            </div>
+            <div className="text-sm text-gray-400">
+              Memory off
+            </div>
           </div>
         </div>
       </div>
       
-      <div className="container mx-auto px-4 py-12">
-        <PromptForm />
-        
-        <div className="max-w-2xl mx-auto mt-12 text-center space-y-4">
-          <h3 className="text-lg font-semibold text-gray-900">How it works:</h3>
-          <div className="grid gap-4 md:grid-cols-3">
-            <div className="space-y-2">
-              <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto font-semibold">1</div>
-              <p className="text-sm text-gray-600">Enter a prompt you want someone to ask ChatGPT</p>
-            </div>
-            <div className="space-y-2">
-              <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto font-semibold">2</div>
-              <p className="text-sm text-gray-600">Share the generated link with them</p>
-            </div>
-            <div className="space-y-2">
-              <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto font-semibold">3</div>
-              <p className="text-sm text-gray-600">They see the typing animation, then get redirected to ChatGPT</p>
+      {/* Main content area */}
+      <div className="flex-1 flex flex-col items-center justify-center px-4 py-12">
+        <div className="w-full max-w-4xl mx-auto">
+          {/* ChatGPT-style welcome message */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-medium text-white mb-4">
+              What can I help with?
+            </h2>
+            <p className="text-gray-400 text-lg">
+              For all those people who find it more convenient to ask you to ask ChatGPT than to ask ChatGPT themselves.
+            </p>
+          </div>
+          
+          <PromptForm />
+          
+          {/* How it works section */}
+          <div className="max-w-3xl mx-auto mt-16 text-center">
+            <h3 className="text-xl font-medium text-white mb-8">How it works:</h3>
+            <div className="grid gap-6 md:grid-cols-3">
+              <div className="space-y-3">
+                <div className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto font-semibold">1</div>
+                <p className="text-gray-300">Enter a prompt you want someone to ask ChatGPT</p>
+              </div>
+              <div className="space-y-3">
+                <div className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto font-semibold">2</div>
+                <p className="text-gray-300">Share the generated link with them</p>
+              </div>
+              <div className="space-y-3">
+                <div className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto font-semibold">3</div>
+                <p className="text-gray-300">They see the typing animation, then get redirected to ChatGPT</p>
+              </div>
             </div>
           </div>
         </div>
