@@ -110,6 +110,23 @@ const Index = () => {
           </div>
         </div>
       </div>
+      
+      {/* Footer */}
+      <footer className="border-t border-gray-700 bg-gray-900 mt-auto">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center space-x-3">
+              <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-xs">P</span>
+              </div>
+              <span className="text-gray-400 text-sm">Prompt That For You</span>
+            </div>
+            <div className="text-gray-400 text-sm text-center sm:text-right">
+              <p>Made with ❤️ for people who are too lazy to ask ChatGPT themselves</p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
