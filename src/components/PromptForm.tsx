@@ -76,26 +76,30 @@ export const PromptForm = () => {
       {generatedUrl && (
         <div className="mt-8 bg-gray-800 rounded-2xl border border-gray-700 p-6">
           <h3 className="text-lg font-medium text-white mb-4">Your shareable link:</h3>
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <Input
               value={generatedUrl}
               readOnly
               className="flex-1 bg-gray-700 border-gray-600 text-gray-200 font-mono text-sm"
             />
-            <Button
-              variant="outline"
-              onClick={copyToClipboard}
-              className="bg-gray-700 border-gray-600 text-gray-200 hover:bg-gray-600"
-            >
-              <Copy className="w-4 h-4" />
-            </Button>
-            <Button
-              variant="outline"
-              onClick={openPreview}
-              className="bg-gray-700 border-gray-600 text-gray-200 hover:bg-gray-600"
-            >
-              <ExternalLink className="w-4 h-4" />
-            </Button>
+            <div className="flex gap-3 sm:gap-2">
+              <Button
+                variant="outline"
+                onClick={copyToClipboard}
+                className="flex-1 sm:flex-none bg-gray-700 border-gray-600 text-gray-200 hover:bg-gray-600"
+              >
+                <Copy className="w-4 h-4 mr-2 sm:mr-0" />
+                <span className="sm:hidden">Copy</span>
+              </Button>
+              <Button
+                variant="outline"
+                onClick={openPreview}
+                className="flex-1 sm:flex-none bg-gray-700 border-gray-600 text-gray-200 hover:bg-gray-600"
+              >
+                <ExternalLink className="w-4 h-4 mr-2 sm:mr-0" />
+                <span className="sm:hidden">Open</span>
+              </Button>
+            </div>
           </div>
           <p className="text-gray-400 text-sm mt-3">
             Share this link to show someone how to ask ChatGPT the right question!

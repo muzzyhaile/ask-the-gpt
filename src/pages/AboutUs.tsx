@@ -25,47 +25,47 @@ const AboutUs = () => {
       {/* Main content */}
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-medium text-white mb-6">About Us</h1>
-          <p className="text-xl text-gray-400">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium text-white mb-6">About Us</h1>
+          <p className="text-lg sm:text-xl text-gray-400 px-4">
             The story behind "Let me Prompt that for you"
           </p>
         </div>
 
         <div className="prose prose-invert max-w-none">
-          <div className="bg-gray-800 rounded-lg p-8 mb-8">
-            <h2 className="text-2xl font-semibold text-white mb-4">Inspired by a Classic</h2>
-            <p className="text-gray-300 text-lg leading-relaxed mb-4">
+          <div className="bg-gray-800 rounded-lg p-4 sm:p-6 md:p-8 mb-8">
+            <h2 className="text-xl sm:text-2xl font-semibold text-white mb-4">Inspired by a Classic</h2>
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-4">
               Remember <span className="text-green-400 font-medium">Let Me Google That For You</span>? 
               That delightfully passive-aggressive way to help people who ask you to search for things 
               they could easily Google themselves?
             </p>
-            <p className="text-gray-300 text-lg leading-relaxed">
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
               Well, we've entered the AI age, and now people ask you to ask ChatGPT instead of just... 
               asking ChatGPT themselves. So we created the modern equivalent for the ChatGPT era.
             </p>
           </div>
 
-          <div className="bg-gray-800 rounded-lg p-8 mb-8">
-            <h2 className="text-2xl font-semibold text-white mb-4">How It Started</h2>
-            <p className="text-gray-300 text-lg leading-relaxed mb-4">
+          <div className="bg-gray-800 rounded-lg p-4 sm:p-6 md:p-8 mb-8">
+            <h2 className="text-xl sm:text-2xl font-semibold text-white mb-4">How It Started</h2>
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-4">
               "Hey, can you ask ChatGPT how to cook pasta?"
             </p>
-            <p className="text-gray-300 text-lg leading-relaxed mb-4">
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-4">
               "Can you prompt ChatGPT to write my email?"
             </p>
-            <p className="text-gray-300 text-lg leading-relaxed">
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
               Sound familiar? Instead of getting frustrated, we built this tool to gently educate 
               people on how easy it is to use ChatGPT directly.
             </p>
           </div>
 
-          <div className="bg-gray-800 rounded-lg p-8">
-            <h2 className="text-2xl font-semibold text-white mb-4">The Mission</h2>
-            <p className="text-gray-300 text-lg leading-relaxed mb-4">
+          <div className="bg-gray-800 rounded-lg p-4 sm:p-6 md:p-8">
+            <h2 className="text-xl sm:text-2xl font-semibold text-white mb-4">The Mission</h2>
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-4">
               We believe everyone should feel comfortable using AI tools directly. Sometimes people 
               just need to see how simple it really is.
             </p>
-            <p className="text-gray-300 text-lg leading-relaxed">
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
               So next time someone asks you to "prompt ChatGPT for them," just send them here. 
               They'll see exactly how it's done, and maybe they'll be inspired to try it themselves next time.
             </p>
