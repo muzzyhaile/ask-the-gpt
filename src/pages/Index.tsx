@@ -122,7 +122,7 @@ const Index = () => {
               <span className="text-gray-400 text-sm">Prompt That For You</span>
             </div>
             <div className="text-gray-400 text-sm text-center sm:text-right">
-              <p>Made with ❤️ for people who are too lazy to ask ChatGPT themselves</p>
+              <p>Made with ❤️ for people who prefer delegation over direct interaction</p>
             </div>
           </div>
         </div>
