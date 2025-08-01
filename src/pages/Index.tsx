@@ -55,7 +55,7 @@ const Index = () => {
   console.log("Index component rendering..."); // Debug log
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col">
       {/* ChatGPT-style header */}
       <div className="border-b border-gray-700 bg-gray-900">
         <div className="container mx-auto px-4 py-4">
