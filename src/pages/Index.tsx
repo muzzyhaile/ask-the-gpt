@@ -121,8 +121,11 @@ const Index = () => {
               </div>
               <span className="text-gray-400 text-sm">Prompt That For You</span>
             </div>
-            <div className="text-gray-400 text-sm text-center sm:text-right">
-              <p>Made with ❤️ for people who prefer delegation over direct interaction</p>
+            <div className="flex flex-wrap gap-4 text-gray-400 text-sm text-center sm:text-right">
+              <Link to="/imprint" className="hover:text-white transition-colors">Imprint</Link>
+              <Link to="/legal" className="hover:text-white transition-colors">Legal</Link>
+              <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+              <p className="w-full sm:w-auto">Made with ❤️ for people who prefer delegation over direct interaction</p>
             </div>
           </div>
         </div>
