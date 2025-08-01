@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import { ChatInterface } from "@/components/ChatInterface";
 import { PromptForm } from "@/components/PromptForm";
 import { Header } from "@/components/Header";
@@ -68,9 +68,9 @@ const Index = () => {
                 Prompt That For You
               </h1>
             </div>
-            <button className="text-sm text-gray-400 hover:text-white underline transition-colors">
+            <Link to="/about" className="text-sm text-gray-400 hover:text-white underline transition-colors">
               About us
-            </button>
+            </Link>
           </div>
         </div>
       </div>
