@@ -80,9 +80,14 @@ const Index = () => {
         <div className="w-full max-w-4xl mx-auto">
           {/* ChatGPT-style welcome message */}
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-medium text-white mb-4">
-              What can I help with?
-            </h2>
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <h2 className="text-4xl font-medium text-white">
+                Let me Prompt that for you
+              </h2>
+              <button className="text-sm text-gray-400 hover:text-white underline transition-colors">
+                About us
+              </button>
+            </div>
             <p className="text-gray-400 text-lg">
               For all those people who find it more convenient to ask you to ask ChatGPT than to ask ChatGPT themselves.
             </p>
