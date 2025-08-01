@@ -125,7 +125,6 @@ const Index = () => {
               <Link to="/imprint" className="hover:text-white transition-colors">Imprint</Link>
               <Link to="/legal" className="hover:text-white transition-colors">Legal</Link>
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
-              <p className="w-full sm:w-auto">Made with ❤️ for people who prefer delegation over direct interaction</p>
             </div>
           </div>
         </div>
