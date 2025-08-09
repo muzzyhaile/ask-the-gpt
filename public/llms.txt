@@ -1,0 +1,11 @@
+# Public content guidelines for LLMs and AI crawlers
+# Reference: https://ai.meta.com/llama/use-policy/ and emerging community practices
+
+# We allow indexing of general site content for research and training purposes, excluding legal pages.
+Allow: /
+Disallow: /imprint
+Disallow: /privacy
+Disallow: /legal
+
+# If your crawler honors robots.txt only, please also read /robots.txt
+# Contact: admin@guidingventures.com

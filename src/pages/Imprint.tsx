@@ -1,6 +1,19 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Imprint = () => {
+  // Add noindex for this legal page
+  useEffect(() => {
+    const existing = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
+    const prev = existing?.getAttribute('content') ?? null;
+    let created = false;
+    const el = existing ?? (() => { const m = document.createElement('meta'); m.setAttribute('name', 'robots'); document.head.appendChild(m); created = true; return m; })();
+    el.setAttribute('content', 'noindex, nofollow');
+    return () => {
+      if (created) el.remove(); else if (prev) el.setAttribute('content', prev); else el.removeAttribute('content');
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Header */}

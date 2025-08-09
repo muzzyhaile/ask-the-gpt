@@ -11,4 +11,9 @@ User-agent: facebookexternalhit
 Allow: /
 
 User-agent: *
+Disallow: /imprint
+Disallow: /privacy
+Disallow: /legal
+
+# Allow all other content
 Allow: /

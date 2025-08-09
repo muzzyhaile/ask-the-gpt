@@ -1,6 +1,19 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 const Legal = () => {
+  // Add noindex for this legal page
+  useEffect(() => {
+    const existing = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
+    const prev = existing?.getAttribute('content') ?? null;
+    let created = false;
+    const el = existing ?? (() => { const m = document.createElement('meta'); m.setAttribute('name', 'robots'); document.head.appendChild(m); created = true; return m; })();
+    el.setAttribute('content', 'noindex, nofollow');
+    return () => {
+      if (created) el.remove(); else if (prev) el.setAttribute('content', prev); else el.removeAttribute('content');
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Header */}
@@ -79,7 +92,7 @@ const Legal = () => {
             <section>
               <h2 className="text-xl font-semibold text-white mb-3">8. Contact</h2>
               <p>
-                Mussie Haile, Guiding-Ventures, Lohmühlenstraße 65, 12435 Berlin, Germany, E-mail: <a className="underline" href="mailto:admin@guidingventures.com">admin@guidingventures.com</a>
+                Guiding-Ventures, Lohmühlenstraße 65, 12435 Berlin, Germany, E-mail: <a className="underline" href="mailto:admin@guidingventures.com">admin@guidingventures.com</a>
               </p>
             </section>
           </div>
