@@ -22,32 +22,63 @@ const Index = () => {
 
   if (showAnimation && promptParam) {
     return (
-      <div className="min-h-screen bg-chat-background text-foreground">
-        <Header />
-        <div className="container mx-auto px-4 py-8">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-semibold text-foreground mb-2">
-              Watch and Learn
-            </h2>
-            <p className="text-muted-foreground">
-              Here's how you ask ChatGPT the question:
-            </p>
+      <div className="min-h-screen bg-gray-900 text-white flex flex-col">
+        {/* ChatGPT-style header (same as LP) */}
+        <div className="border-b border-gray-700 bg-gray-900">
+          <div className="container mx-auto px-4 py-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
+                  <span className="text-secondary-foreground font-bold text-sm">P</span>
+                </div>
+                <h1 className="text-xl font-medium text-white">
+                  Prompt That For You
+                </h1>
+              </div>
+              <Link to="/about" className="text-sm text-gray-400 hover:text-white underline transition-colors">
+                About us
+              </Link>
+            </div>
           </div>
-          
-          <ChatInterface 
-            prompt={promptParam} 
-            onComplete={handleAnimationComplete}
-          />
+        </div>
+        
+        {/* Main content area (centered like LP) */}
+        <div className="flex-1 flex flex-col items-center justify-center px-4 py-12">
+          <div className="w-full max-w-4xl mx-auto">
+            <ChatInterface 
+              prompt={promptParam} 
+              onComplete={handleAnimationComplete}
+            />
 
-          {redirecting && (
-            <div className="text-center mt-8">
-              <div className="inline-flex items-center gap-2 text-muted-foreground">
-                <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
-                Redirecting to ChatGPT...
+            {redirecting && (
+              <div className="text-center mt-8">
+                <div className="inline-flex items-center gap-2 text-gray-400">
+                  <div className="w-4 h-4 border-2 border-white/60 border-t-transparent rounded-full animate-spin"></div>
+                  Redirecting to ChatGPT...
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Footer (same as LP) */}
+        <footer className="border-t border-gray-700 bg-gray-900 mt-auto">
+          <div className="container mx-auto px-4 py-6">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center space-x-3">
+                <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+                  <span className="text-secondary-foreground font-bold text-xs">P</span>
+                </div>
+                <span className="text-gray-400 text-sm">Prompt That For You</span>
+              </div>
+              <div className="flex flex-wrap gap-4 text-gray-400 text-sm text-center sm:text-right">
+                <Link to="/imprint" className="hover:text-white transition-colors">Imprint</Link>
+                <Link to="/legal" className="hover:text-white transition-colors">Legal</Link>
+                <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
               </div>
             </div>
-          )}
-        </div>
+          </div>
+        </footer>
       </div>
     );
   }
