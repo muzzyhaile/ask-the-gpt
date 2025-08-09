@@ -37,36 +37,36 @@ export const ChatInterface = ({ prompt, onComplete }: ChatInterfaceProps) => {
   }, [prompt, onComplete]);
 
   return (
-    <div className="w-full max-w-4xl mx-auto bg-chat-surface rounded-lg shadow-chat border border-chat-border">
+    <div className="w-full max-w-4xl mx-auto bg-secondary rounded-lg shadow-chat border border-border">
       {/* Chat Header */}
-      <div className="border-b border-chat-border p-4">
+      <div className="border-b border-border p-4">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center">
-            <span className="text-primary-foreground font-semibold text-sm">C</span>
+          <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
+            <span className="text-secondary-foreground font-semibold text-sm">C</span>
           </div>
           <span className="font-medium text-foreground">ChatGPT</span>
         </div>
       </div>
 
       {/* Chat Messages */}
-      <div className="p-4 min-h-[200px] bg-gradient-chat">
+      <div className="p-4 min-h-[200px] bg-background">
         <div className="space-y-4">
           {/* Example previous message */}
           <div className="flex gap-3">
             <div className="w-8 h-8 bg-muted rounded-full flex items-center justify-center flex-shrink-0">
               <span className="text-muted-foreground font-semibold text-sm">U</span>
             </div>
-            <div className="bg-background rounded-lg p-3 border border-chat-border">
+            <div className="bg-background rounded-lg p-3 border border-border">
               <p className="text-foreground text-sm">Hello! How can I help you today?</p>
             </div>
           </div>
 
           {/* AI Response */}
           <div className="flex gap-3">
-            <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-primary-foreground font-semibold text-sm">C</span>
+            <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+              <span className="text-secondary-foreground font-semibold text-sm">C</span>
             </div>
-            <div className="bg-background rounded-lg p-3 border border-chat-border">
+            <div className="bg-background rounded-lg p-3 border border-border">
               <p className="text-foreground text-sm">
                 I'm here to help! What would you like to know or discuss?
               </p>
@@ -76,7 +76,7 @@ export const ChatInterface = ({ prompt, onComplete }: ChatInterfaceProps) => {
       </div>
 
       {/* Input Area */}
-      <div className="border-t border-chat-border p-4">
+      <div className="border-t border-border p-4">
         <div className="flex gap-3 items-end">
           <div className="flex-1 relative">
             <div className="min-h-[44px] max-h-[200px] bg-background border border-chat-border rounded-lg px-4 py-3 focus-within:shadow-input transition-shadow">
@@ -92,15 +92,14 @@ export const ChatInterface = ({ prompt, onComplete }: ChatInterfaceProps) => {
             </div>
           </div>
           
-          <Button
-            size="sm"
-            className={`h-11 w-11 p-0 bg-gradient-primary hover:bg-primary-hover shadow-button transition-all duration-200 ${
-              showSendButton ? 'opacity-100 scale-100' : 'opacity-50 scale-95'
-            }`}
-            disabled={!showSendButton}
-          >
-            <Send className="w-4 h-4" />
-          </Button>
+      <Button
+        size="sm"
+        variant="secondary"
+        className={`${showSendButton ? 'opacity-100 scale-100' : 'opacity-50 scale-95'} h-11 w-11 p-0 transition-all duration-200`}
+        disabled={!showSendButton}
+      >
+        <Send className="w-4 h-4" />
+      </Button>
         </div>
       </div>
     </div>

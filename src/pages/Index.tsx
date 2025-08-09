@@ -22,7 +22,7 @@ const Index = () => {
 
   if (showAnimation && promptParam) {
     return (
-      <div className="min-h-screen bg-chat-background">
+      <div className="min-h-screen bg-chat-background text-foreground">
         <Header />
         <div className="container mx-auto px-4 py-8">
           <div className="text-center mb-8">
