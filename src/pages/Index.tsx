@@ -3,7 +3,6 @@ import { useSearchParams, Link } from "react-router-dom";
 import { ChatInterface } from "@/components/ChatInterface";
 import { PromptForm } from "@/components/PromptForm";
 import { Header } from "@/components/Header";
-import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
@@ -11,19 +10,8 @@ const Index = () => {
   const promptParam = searchParams.get("prompt");
   const [showAnimation] = useState(!!promptParam);
   const [redirecting, setRedirecting] = useState(false);
-  const [popupBlocked, setPopupBlocked] = useState(false);
   const { toast } = useToast();
 
-  const openChatGpt = () => {
-    const url = `https://chatgpt.com/?model=gpt-4o-mini&q=${encodeURIComponent(promptParam || "")}`;
-    const newTab = window.open(url, "_blank", "noopener,noreferrer");
-    if (!newTab) {
-      setPopupBlocked(true);
-      toast({ title: "Popup blocked", description: "Click the button to open the chat.", variant: "destructive" });
-    } else {
-      setPopupBlocked(false);
-    }
-  };
   const copyPrompt = async () => {
     try {
       await navigator.clipboard.writeText(promptParam || "");
@@ -36,7 +24,10 @@ const Index = () => {
   const handleAnimationComplete = async () => {
     setRedirecting(true);
     await copyPrompt();
-    openChatGpt();
+    const url = `https://chat.openai.com/?q=${encodeURIComponent(promptParam || "")}`;
+    setTimeout(() => {
+      window.location.href = url;
+    }, 1000);
   };
 
   if (showAnimation && promptParam) {
@@ -69,18 +60,15 @@ const Index = () => {
               onComplete={handleAnimationComplete}
             />
 
-              <div className="mt-8 max-w-xl mx-auto text-center bg-secondary border border-border rounded-xl p-5">
-                <p className="text-foreground">
-                  Your prompt is copied. Switch to the chat tab, paste (Ctrl/Cmd+V), then press Enter.
-                </p>
-                <div className="flex items-center justify-center gap-3 mt-4">
-                  <Button variant="secondary" onClick={copyPrompt}>Copy again</Button>
-                  <Button onClick={openChatGpt}>Open chat</Button>
+            {redirecting && (
+              <div className="text-center mt-8">
+                <div className="inline-flex items-center gap-2 text-gray-400">
+                  <div className="w-4 h-4 border-2 border-white/60 border-t-transparent rounded-full animate-spin"></div>
+                  Redirecting to chat...
                 </div>
-                {popupBlocked && (
-                  <p className="text-muted-foreground text-sm mt-3">If a popup was blocked, use the button above to open the chat.</p>
-                )}
               </div>
+            )}
+
           </div>
         </div>
 
