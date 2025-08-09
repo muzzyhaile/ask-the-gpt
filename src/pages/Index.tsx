@@ -30,6 +30,12 @@ const Index = () => {
     }, 1000);
   };
 
+  const openCookieSettings = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const btn = document.querySelector('[data-open-cookie-settings]') as HTMLButtonElement | null;
+    btn?.click();
+  };
+
   if (showAnimation && promptParam) {
     return (
       <div className="min-h-screen bg-gray-900 text-white flex flex-col">
@@ -86,6 +92,7 @@ const Index = () => {
                 <Link to="/imprint" className="hover:text-white transition-colors">Imprint</Link>
                 <Link to="/legal" className="hover:text-white transition-colors">Legal</Link>
                 <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+                <a href="#" onClick={openCookieSettings} className="hover:text-white transition-colors">Cookie Settings</a>
               </div>
             </div>
           </div>
@@ -167,6 +174,7 @@ const Index = () => {
               <Link to="/imprint" className="hover:text-white transition-colors">Imprint</Link>
               <Link to="/legal" className="hover:text-white transition-colors">Legal</Link>
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+              <a href="#" onClick={openCookieSettings} className="hover:text-white transition-colors">Cookie Settings</a>
             </div>
           </div>
         </div>

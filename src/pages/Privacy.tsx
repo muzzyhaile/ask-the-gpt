@@ -24,40 +24,90 @@ const Privacy = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl font-bold text-white mb-8">Privacy Policy</h1>
           
-          <div className="space-y-6 text-gray-300">
+          <div className="space-y-8 text-gray-300">
             <section>
-              <h2 className="text-xl font-semibold text-white mb-3">Information We Collect</h2>
+              <h2 className="text-xl font-semibold text-white mb-3">1. Controller</h2>
               <p>
-                We collect information you provide directly to us, such as when you create an account, use our services, or contact us for support.
+                Mussie Haile<br />
+                Guiding-Ventures<br />
+                Lohmühlenstraße 65, 12435 Berlin, Germany<br />
+                E-mail: <a className="underline" href="mailto:admin@guidingventures.com">admin@guidingventures.com</a>
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-white mb-3">How We Use Your Information</h2>
+              <h2 className="text-xl font-semibold text-white mb-3">2. Scope</h2>
               <p>
-                We use the information we collect to provide, maintain, and improve our services, process transactions, and communicate with you.
+                This policy explains how we process personal data when you visit this website and use its features. We operate a static web application built with Vite, React and Tailwind CSS. No third-party cookies or trackers are loaded without your consent.
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-white mb-3">Information Sharing</h2>
+              <h2 className="text-xl font-semibold text-white mb-3">3. Categories of data and purposes</h2>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>
+                  Server logs (essential): When accessing the site, the web server may process IP address, date/time, URL, referrer, and user agent for the purpose of delivering content and ensuring security (Art. 6(1)(f) GDPR). Log data is automatically deleted per server retention schedules.
+                </li>
+                <li>
+                  Cookies/Local Storage: We use strictly necessary cookies/local storage to remember your cookie consent decision. With your consent, we may set functional, analytics, and marketing cookies (Art. 6(1)(a) GDPR). You can update your choices anytime via Cookie Settings.
+                </li>
+                <li>
+                  Contact data: If you contact us by e-mail, we process your message and contact details to respond (Art. 6(1)(f) or (b) GDPR).
+                </li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-white mb-3">4. Cookies and consent</h2>
               <p>
-                We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy.
+                We use a consent management tool to collect and store your choices. Essential cookies are always active. Non-essential cookies (functional, analytics, marketing) are only set after you provide consent. You can withdraw or change your consent at any time via the link below or the banner:
+              </p>
+              <p className="mt-2">
+                <a className="underline" href="#" onClick={(e) => { e.preventDefault(); const btn = document.querySelector('[data-open-cookie-settings]') as HTMLButtonElement | null; btn?.click(); }}>Open Cookie Settings</a>
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-white mb-3">Data Security</h2>
+              <h2 className="text-xl font-semibold text-white mb-3">5. Recipients and transfers</h2>
               <p>
-                We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.
+                We do not sell personal data. Service providers (e.g., hosting) may process data on our behalf under Art. 28 GDPR. Where providers are located outside the EU/EEA, we ensure appropriate safeguards (e.g., Standard Contractual Clauses) where required.
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-white mb-3">Contact Us</h2>
+              <h2 className="text-xl font-semibold text-white mb-3">6. Storage periods</h2>
               <p>
-                If you have any questions about this Privacy Policy, please contact us at [email address].
+                We store personal data only as long as necessary for the stated purposes or legal obligations. Cookie consent choices are stored on your device until you delete them or until we change our policy version.
               </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-white mb-3">7. Your rights</h2>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Right of access (Art. 15 GDPR)</li>
+                <li>Right to rectification (Art. 16 GDPR)</li>
+                <li>Right to erasure (Art. 17 GDPR)</li>
+                <li>Right to restriction of processing (Art. 18 GDPR)</li>
+                <li>Right to data portability (Art. 20 GDPR)</li>
+                <li>Right to object (Art. 21 GDPR)</li>
+                <li>Right to withdraw consent at any time (Art. 7(3) GDPR)</li>
+                <li>Right to lodge a complaint with a supervisory authority (Art. 77 GDPR)</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-white mb-3">8. Contact</h2>
+              <p>
+                For privacy inquiries, contact: Mussie Haile, Guiding-Ventures, Lohmühlenstraße 65, 12435 Berlin, Germany, E-mail: <a className="underline" href="mailto:admin@guidingventures.com">admin@guidingventures.com</a>
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-white mb-3">9. Updates</h2>
+              <p>
+                We may update this policy to reflect changes in technology, services, or legal requirements. The current version is shown below. Older versions are available upon request.
+              </p>
+              <p className="text-sm text-gray-400 mt-2">Policy version: 1.0.0</p>
             </section>
           </div>
         </div>
