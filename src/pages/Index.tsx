@@ -17,7 +17,7 @@ const Index = () => {
       await navigator.clipboard.writeText(promptParam || "");
       toast({ title: "Copied", description: "Prompt copied. Paste in the chat and press Enter." });
     } catch (e) {
-      toast({ title: "Copy failed", description: "Press Ctrl/Cmd+C to copy manually.", variant: "destructive" });
+      // Silently ignore copy errors
     }
   };
 
@@ -126,7 +126,7 @@ const Index = () => {
               Let me Prompt that for you
             </h2>
             <p className="text-gray-400 text-base sm:text-lg px-4">
-              For all those people who find it more convenient to ask you to ask ChatGPT than to ask ChatGPT themselves.
+              For all those people who find it more convenient to ask you to ask the chat than to ask the chat themselves.
             </p>
           </div>
           
@@ -138,7 +138,7 @@ const Index = () => {
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
               <div className="space-y-3">
                 <div className="w-10 h-10 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center mx-auto font-semibold">1</div>
-                <p className="text-gray-300 text-sm sm:text-base">Enter a prompt you want someone to ask ChatGPT</p>
+                <p className="text-gray-300 text-sm sm:text-base">Enter a prompt you want someone to ask the chat</p>
               </div>
               <div className="space-y-3">
                 <div className="w-10 h-10 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center mx-auto font-semibold">2</div>
@@ -146,7 +146,7 @@ const Index = () => {
               </div>
               <div className="space-y-3 sm:col-span-2 md:col-span-1">
                 <div className="w-10 h-10 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center mx-auto font-semibold">3</div>
-                <p className="text-gray-300 text-sm sm:text-base">They see the typing animation, then get redirected to ChatGPT</p>
+                <p className="text-gray-300 text-sm sm:text-base">They see the typing animation, then get redirected to the chat</p>
               </div>
             </div>
           </div>
