@@ -8,8 +8,8 @@ const AboutUs = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">P</span>
+              <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
+                <span className="text-secondary-foreground font-bold text-sm">P</span>
               </div>
               <Link to="/" className="text-xl font-medium text-white hover:text-gray-300">
                 Prompt That For You

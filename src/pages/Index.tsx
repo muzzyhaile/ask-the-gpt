@@ -2,59 +2,33 @@ import { useState } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { ChatInterface } from "@/components/ChatInterface";
 import { PromptForm } from "@/components/PromptForm";
-import { Header } from "@/components/Header";
-import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
   const [searchParams] = useSearchParams();
   const promptParam = searchParams.get("prompt");
   const [showAnimation] = useState(!!promptParam);
   const [redirecting, setRedirecting] = useState(false);
-  const { toast } = useToast();
-
-  const copyPrompt = async () => {
-    try {
-      await navigator.clipboard.writeText(promptParam || "");
-      toast({ title: "Copied", description: "Prompt copied. Paste in the chat and press Enter." });
-    } catch (e) {
-      // Silently ignore copy errors
-    }
-  };
 
   const handleAnimationComplete = async () => {
     setRedirecting(true);
-    await copyPrompt();
     const url = `https://chat.openai.com/?q=${encodeURIComponent(promptParam || "")}`;
     setTimeout(() => {
       window.location.href = url;
-    }, 1000);
+    }, 600);
+  };
+
+  const openCookieSettings = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const btn = document.querySelector('[data-open-cookie-settings]') as HTMLButtonElement | null;
+    btn?.click();
   };
 
   if (showAnimation && promptParam) {
     return (
       <div className="min-h-screen bg-gray-900 text-white flex flex-col">
-        {/* ChatGPT-style header (same as LP) */}
-        <div className="border-b border-gray-700 bg-gray-900">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
-                  <span className="text-secondary-foreground font-bold text-sm">P</span>
-                </div>
-                <h1 className="text-xl font-medium text-white">
-                  Prompt That For You
-                </h1>
-              </div>
-              <Link to="/about" className="text-sm text-gray-400 hover:text-white underline transition-colors">
-                About us
-              </Link>
-            </div>
-          </div>
-        </div>
-        
-        {/* Main content area (centered like LP) */}
+        {/* Clean centered content, no headline */}
         <div className="flex-1 flex flex-col items-center justify-center px-4 py-12">
-          <div className="w-full max-w-4xl mx-auto">
+          <div className="w-full max-w-2xl mx-auto">
             <ChatInterface 
               prompt={promptParam} 
               onComplete={handleAnimationComplete}
@@ -68,11 +42,10 @@ const Index = () => {
                 </div>
               </div>
             )}
-
           </div>
         </div>
 
-        {/* Footer (same as LP) */}
+        {/* Footer */}
         <footer className="border-t border-gray-700 bg-gray-900 mt-auto">
           <div className="container mx-auto px-4 py-6">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -86,6 +59,7 @@ const Index = () => {
                 <Link to="/imprint" className="hover:text-white transition-colors">Imprint</Link>
                 <Link to="/legal" className="hover:text-white transition-colors">Legal</Link>
                 <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+                <a href="#" onClick={openCookieSettings} className="hover:text-white transition-colors">Cookie Settings</a>
               </div>
             </div>
           </div>
@@ -167,6 +141,7 @@ const Index = () => {
               <Link to="/imprint" className="hover:text-white transition-colors">Imprint</Link>
               <Link to="/legal" className="hover:text-white transition-colors">Legal</Link>
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+              <a href="#" onClick={openCookieSettings} className="hover:text-white transition-colors">Cookie Settings</a>
             </div>
           </div>
         </div>

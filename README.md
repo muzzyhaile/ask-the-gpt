@@ -1,73 +1,57 @@
-# Welcome to your Lovable project
+# Prompt That For You
 
-## Project info
+Turn any idea into a polished AI prompt in seconds. Share a link that types the prompt on-screen, then redirects the recipient to their chat.
 
-**URL**: https://lovable.dev/projects/5704b3fc-bcce-44a6-95c2-a2f34bc25f7c
+- Website: https://promptthatforyou.com
+- Repository: https://github.com/muzzyhaile/ask-the-gpt
 
-## How can I edit this code?
+## Features
+- Create and share prompt links instantly
+- Typing animation for a familiar chat experience
+- Automatic redirect to chat with the prompt prefilled
+- Clean, responsive UI (React + Tailwind + shadcn/ui)
 
-There are several ways of editing your application.
+## Tech Stack
+- Vite + React + TypeScript
+- Tailwind CSS + shadcn/ui
+- React Router
 
-**Use Lovable**
+## Getting Started (Local)
+Prerequisites: Node.js 18+ and npm
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/5704b3fc-bcce-44a6-95c2-a2f34bc25f7c) and start prompting.
+Windows PowerShell:
 
-Changes made via Lovable will be committed automatically to this repo.
+```powershell
+# Install dependencies
+npm install
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start dev server (http://localhost:8080)
 npm run dev
+
+# Lint
+npm run lint
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+## How It Works
+- Enter a prompt on the homepage and generate a shareable link.
+- The recipient opens the link and sees a brief typing animation.
+- They are redirected to chat with the prompt included in the URL query.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+See `src/pages/Index.tsx` for the redirect logic and UI, and `src/components` for core components.
 
-**Use GitHub Codespaces**
+## SEO & Branding
+- HTML head tags live in `index.html` (title, description, canonical, OG/Twitter tags).
+- Favicon: `public/favicon.svg`
+- Social share image (OG/Twitter): `public/placeholder.svg`
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Contributing
+Issues and PRs are welcome. Please keep changes small and focused.
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/5704b3fc-bcce-44a6-95c2-a2f34bc25f7c) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## License
+Add a LICENSE file if you plan to open source. Otherwise, all rights reserved.
