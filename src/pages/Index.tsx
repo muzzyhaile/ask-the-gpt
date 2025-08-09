@@ -45,21 +45,21 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Footer */}
+        {/* Footer (compact) */}
         <footer className="border-t border-gray-700 bg-gray-900 mt-auto">
-          <div className="container mx-auto px-4 py-6">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="flex items-center space-x-3">
-                <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
-                  <span className="text-secondary-foreground font-bold text-xs">P</span>
+          <div className="container mx-auto px-4 py-3">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div className="flex items-center space-x-2">
+                <div className="w-5 h-5 bg-secondary rounded-full flex items-center justify-center">
+                  <span className="text-secondary-foreground font-bold text-[10px] leading-none">P</span>
                 </div>
-                <span className="text-gray-400 text-sm">Prompt That For You</span>
+                <span className="text-gray-500 text-xs">Prompt That For You</span>
               </div>
-              <div className="flex flex-wrap gap-4 text-gray-400 text-sm text-center sm:text-right">
-                <Link to="/imprint" className="hover:text-white transition-colors">Imprint</Link>
-                <Link to="/legal" className="hover:text-white transition-colors">Legal</Link>
-                <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
-                <a href="#" onClick={openCookieSettings} className="hover:text-white transition-colors">Cookie Settings</a>
+              <div className="flex flex-wrap gap-3 text-gray-500 text-xs text-center sm:text-right">
+                <Link to="/imprint" className="hover:text-gray-300 transition-colors">Imprint</Link>
+                <Link to="/legal" className="hover:text-gray-300 transition-colors">Legal</Link>
+                <Link to="/privacy" className="hover:text-gray-300 transition-colors">Privacy</Link>
+                <a href="#" onClick={openCookieSettings} className="hover:text-gray-300 transition-colors">Cookie Settings</a>
               </div>
             </div>
           </div>
@@ -127,21 +127,21 @@ const Index = () => {
         </div>
       </div>
       
-      {/* Footer */}
+      {/* Footer (compact) */}
       <footer className="border-t border-gray-700 bg-gray-900 mt-auto">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
-                <span className="text-secondary-foreground font-bold text-xs">P</span>
+        <div className="container mx-auto px-4 py-3">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div className="flex items-center space-x-2">
+              <div className="w-5 h-5 bg-secondary rounded-full flex items-center justify-center">
+                <span className="text-secondary-foreground font-bold text-[10px] leading-none">P</span>
               </div>
-              <span className="text-gray-400 text-sm">Prompt That For You</span>
+              <span className="text-gray-500 text-xs">Prompt That For You</span>
             </div>
-            <div className="flex flex-wrap gap-4 text-gray-400 text-sm text-center sm:text-right">
-              <Link to="/imprint" className="hover:text-white transition-colors">Imprint</Link>
-              <Link to="/legal" className="hover:text-white transition-colors">Legal</Link>
-              <Link to="/privacy" className="hover:text-white transition-colors">Privacy</Link>
-              <a href="#" onClick={openCookieSettings} className="hover:text-white transition-colors">Cookie Settings</a>
+            <div className="flex flex-wrap gap-3 text-gray-500 text-xs text-center sm:text-right">
+              <Link to="/imprint" className="hover:text-gray-300 transition-colors">Imprint</Link>
+              <Link to="/legal" className="hover:text-gray-300 transition-colors">Legal</Link>
+              <Link to="/privacy" className="hover:text-gray-300 transition-colors">Privacy</Link>
+              <a href="#" onClick={openCookieSettings} className="hover:text-gray-300 transition-colors">Cookie Settings</a>
             </div>
           </div>
         </div>
