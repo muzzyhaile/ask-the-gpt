@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Copy, ExternalLink } from "lucide-react";
+import { Copy, ExternalLink, ArrowUp } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 export const PromptForm = () => {
@@ -57,10 +57,10 @@ export const PromptForm = () => {
             <Button 
               onClick={generateUrl}
               disabled={!prompt.trim()}
-              variant="secondary"
-              className="rounded-full h-8 w-8 p-0"
+              className="h-12 w-12 rounded-full p-0 bg-primary text-primary-foreground ring-4 ring-secondary hover:opacity-90 transition-opacity"
+              aria-label="Generate shareable link"
             >
-              <span className="text-sm">↗</span>
+              <ArrowUp className="w-5 h-5" />
             </Button>
           </div>
         </div>
