@@ -24,32 +24,62 @@ const Legal = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl font-bold text-white mb-8">Terms of Service</h1>
           
-          <div className="space-y-6 text-gray-300">
+          <div className="space-y-8 text-gray-300">
             <section>
-              <h2 className="text-xl font-semibold text-white mb-3">1. Acceptance of Terms</h2>
+              <h2 className="text-xl font-semibold text-white mb-3">1. Service description</h2>
               <p>
-                By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement.
+                This website provides a link generator that redirects users to external AI chat services (e.g., ChatGPT) with a pre-filled query. We do not operate those external services nor do we control their availability or content.
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-white mb-3">2. Use License</h2>
+              <h2 className="text-xl font-semibold text-white mb-3">2. Use and responsibilities</h2>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Do not use the service for unlawful purposes or to submit unlawful content.</li>
+                <li>You are responsible for the content you enter and share via generated links.</li>
+                <li>We may modify or discontinue features at any time.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-white mb-3">3. Intellectual property</h2>
               <p>
-                Permission is granted to temporarily use this website for personal, non-commercial transitory viewing only.
+                Site content, trademarks and branding are protected by applicable laws. You receive no license beyond what is necessary to use the service.
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-white mb-3">3. Disclaimer</h2>
+              <h2 className="text-xl font-semibold text-white mb-3">4. AI outputs and third-party services</h2>
               <p>
-                The materials on this website are provided on an 'as is' basis. We make no warranties, expressed or implied, and hereby disclaim and negate all other warranties including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.
+                AI outputs may be inaccurate or inappropriate. We are not responsible for content or policies of third-party services. Please review their terms separately.
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-white mb-3">4. Limitations</h2>
+              <h2 className="text-xl font-semibold text-white mb-3">5. Liability</h2>
               <p>
-                In no event shall the company or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on this website.
+                We are liable only for intent and gross negligence and for injury to life, body or health. Otherwise, liability is excluded to the maximum extent permitted by law. Mandatory statutory rights under German law remain unaffected.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-white mb-3">6. Governing law and venue</h2>
+              <p>
+                These terms are governed by the laws of the Federal Republic of Germany. If you are a merchant within the meaning of the HGB, the place of jurisdiction is Berlin.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-white mb-3">7. Changes to these terms</h2>
+              <p>
+                We may update these terms. The current version is displayed on this page.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-semibold text-white mb-3">8. Contact</h2>
+              <p>
+                Mussie Haile, Guiding-Ventures, Lohmühlenstraße 65, 12435 Berlin, Germany, E-mail: <a className="underline" href="mailto:admin@guidingventures.com">admin@guidingventures.com</a>
               </p>
             </section>
           </div>

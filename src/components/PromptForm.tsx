@@ -12,10 +12,16 @@ export const PromptForm = () => {
 
   const generateUrl = () => {
     if (!prompt.trim()) return;
-    
     const baseUrl = window.location.origin;
     const encodedPrompt = encodeURIComponent(prompt.trim());
     const url = `${baseUrl}?prompt=${encodedPrompt}`;
+    if (url.length > 1800) {
+      toast({
+        title: "URL may be too long",
+        description: "Your prompt may exceed safe URL limits. Consider shortening or sharing via copy instead.",
+        variant: "destructive",
+      });
+    }
     setGeneratedUrl(url);
   };
 
@@ -37,7 +43,10 @@ export const PromptForm = () => {
 
   const openPreview = () => {
     if (generatedUrl) {
-      window.open(generatedUrl, '_blank');
+      const w = window.open(generatedUrl, "_blank", "noopener,noreferrer");
+      if (w) {
+        try { (w as any).opener = null; } catch {}
+      }
     }
   };
 

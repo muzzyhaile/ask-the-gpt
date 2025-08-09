@@ -9,6 +9,12 @@
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0ea5e9" />
 
+    <!-- Privacy: avoid leaking full URL (including ?prompt) to external sites -->
+    <meta name="referrer" content="origin" />
+
+    <!-- CSP (loose enough for dev; tighten for production builds) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://chat.openai.com ws: http: https:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests" />
+
     <meta property="og:title" content="Prompt That For You" />
     <meta property="og:description" content="Turn any idea into a polished AI prompt in seconds. Share and reuse across tools." />
     <meta property="og:type" content="website" />
