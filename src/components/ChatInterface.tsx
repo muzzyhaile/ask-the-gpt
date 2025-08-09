@@ -44,7 +44,7 @@ export const ChatInterface = ({ prompt, onComplete }: ChatInterfaceProps) => {
           <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
             <span className="text-secondary-foreground font-semibold text-sm">C</span>
           </div>
-          <span className="font-medium text-foreground">ChatGPT</span>
+          <span className="font-medium text-foreground">Chat</span>
         </div>
       </div>
 
@@ -87,7 +87,7 @@ export const ChatInterface = ({ prompt, onComplete }: ChatInterfaceProps) => {
                 )}
               </div>
               {!typedText && !isTyping && (
-                <div className="text-muted-foreground">Message ChatGPT...</div>
+                <div className="text-muted-foreground">Type your message...</div>
               )}
             </div>
           </div>
