@@ -5,6 +5,16 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } f
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 
+// GA4 measurement id from env (set VITE_GA_MEASUREMENT_ID="G-XXXXXXX")
+const GA_ID = (import.meta as any).env?.VITE_GA_MEASUREMENT_ID || (import.meta as any).env?.VITE_GA4_ID;
+
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag?: (...args: any[]) => void;
+  }
+}
+
 export type ConsentCategories = {
   essential: true; // always true and cannot be disabled
   functional: boolean;
@@ -56,6 +66,35 @@ export const CookieConsentProvider: React.FC<{ children: React.ReactNode }> = ({
       setShowBanner(true);
     }
   }, []);
+
+  // Load GA only after analytics consent is granted
+  useEffect(() => {
+    if (!GA_ID) return;
+    const analyticsGranted = !!consent?.categories.analytics;
+
+    // If GA script not present and consent granted, inject it
+    if (analyticsGranted && !document.querySelector(`script[data-ga-id="${GA_ID}"]`)) {
+      const s = document.createElement("script");
+      s.async = true;
+      s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+      s.setAttribute("data-ga-id", GA_ID);
+      document.head.appendChild(s);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ window.dataLayer.push(arguments as any); }
+      window.gtag = gtag as any;
+      window.gtag('js', new Date());
+      // Anonymize IP, respect basic privacy
+      window.gtag('config', GA_ID, { anonymize_ip: true });
+      // Explicitly set consent state for analytics storage
+      window.gtag('consent', 'update', { analytics_storage: 'granted' });
+    }
+
+    // If GA is already loaded, update consent state on toggle
+    if (window.gtag) {
+      window.gtag('consent', 'update', { analytics_storage: analyticsGranted ? 'granted' : 'denied' });
+    }
+  }, [consent?.categories.analytics]);
 
   const persist = useCallback((state: ConsentState) => {
     setConsent(state);
@@ -140,9 +179,9 @@ const CookieBanner: React.FC<{
         <div className="p-5 sm:p-6">
           <p className="text-sm text-gray-200">
             We use cookies and similar technologies to operate this site and keep it secure (essential).
-            With your consent, we also use functional, analytics and marketing cookies. You can adjust your
-            choices anytime in Cookie Settings. For details, see our <a href="/privacy" className="underline">Privacy Policy</a>
-            {" "}and <a href="/imprint" className="underline">Imprint</a>.
+            With your consent, we also use functional cookies, analytics cookies (e.g., Google Analytics 4),
+            and marketing cookies. You can adjust your choices anytime in Cookie Settings. For details, see our <a href="/privacy" className="underline">Privacy Policy</a>{" "}
+            and <a href="/imprint" className="underline">Imprint</a>.
           </p>
           <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-end">
             <Button variant="secondary" onClick={onManage}>
@@ -205,7 +244,7 @@ export const CookieSettingsDialog: React.FC = () => {
           <div className="flex items-start justify-between gap-4">
             <div>
               <Label className="font-medium" htmlFor="analytics">Analytics</Label>
-              <p className="text-sm text-gray-400">Help us understand usage (only set if you consent).</p>
+              <p className="text-sm text-gray-400">Helps us understand usage (e.g., Google Analytics 4). Set only if you consent.</p>
             </div>
             <Switch id="analytics" checked={analytics} onCheckedChange={setAnalytics} />
           </div>
