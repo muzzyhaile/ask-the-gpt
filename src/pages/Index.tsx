@@ -15,11 +15,11 @@ const Index = () => {
   const { toast } = useToast();
 
   const openChatGpt = () => {
-    const url = `https://chatgpt.com/?q=${encodeURIComponent(promptParam || "")}`;
+    const url = `https://chatgpt.com/?model=gpt-4o-mini&q=${encodeURIComponent(promptParam || "")}`;
     const newTab = window.open(url, "_blank", "noopener,noreferrer");
     if (!newTab) {
       setPopupBlocked(true);
-      toast({ title: "Popup blocked", description: "Click the button to open ChatGPT.", variant: "destructive" });
+      toast({ title: "Popup blocked", description: "Click the button to open the chat.", variant: "destructive" });
     } else {
       setPopupBlocked(false);
     }
@@ -27,7 +27,7 @@ const Index = () => {
   const copyPrompt = async () => {
     try {
       await navigator.clipboard.writeText(promptParam || "");
-      toast({ title: "Copied", description: "Prompt copied. Paste in ChatGPT and press Enter." });
+      toast({ title: "Copied", description: "Prompt copied. Paste in the chat and press Enter." });
     } catch (e) {
       toast({ title: "Copy failed", description: "Press Ctrl/Cmd+C to copy manually.", variant: "destructive" });
     }
@@ -71,14 +71,14 @@ const Index = () => {
 
               <div className="mt-8 max-w-xl mx-auto text-center bg-secondary border border-border rounded-xl p-5">
                 <p className="text-foreground">
-                  Your prompt is copied. Switch to the ChatGPT tab, paste (Ctrl/Cmd+V), then press Enter.
+                  Your prompt is copied. Switch to the chat tab, paste (Ctrl/Cmd+V), then press Enter.
                 </p>
                 <div className="flex items-center justify-center gap-3 mt-4">
                   <Button variant="secondary" onClick={copyPrompt}>Copy again</Button>
-                  <Button onClick={openChatGpt}>Open ChatGPT</Button>
+                  <Button onClick={openChatGpt}>Open chat</Button>
                 </div>
                 {popupBlocked && (
-                  <p className="text-muted-foreground text-sm mt-3">If a popup was blocked, use the button above to open ChatGPT.</p>
+                  <p className="text-muted-foreground text-sm mt-3">If a popup was blocked, use the button above to open the chat.</p>
                 )}
               </div>
           </div>
