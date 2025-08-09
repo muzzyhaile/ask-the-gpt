@@ -61,8 +61,8 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">P</span>
+              <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
+                <span className="text-secondary-foreground font-bold text-sm">P</span>
               </div>
               <h1 className="text-xl font-medium text-white">
                 Prompt That For You
@@ -95,15 +95,15 @@ const Index = () => {
             <h3 className="text-lg sm:text-xl font-medium text-white mb-8">How it works:</h3>
             <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
               <div className="space-y-3">
-                <div className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto font-semibold">1</div>
+                <div className="w-10 h-10 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center mx-auto font-semibold">1</div>
                 <p className="text-gray-300 text-sm sm:text-base">Enter a prompt you want someone to ask ChatGPT</p>
               </div>
               <div className="space-y-3">
-                <div className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto font-semibold">2</div>
+                <div className="w-10 h-10 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center mx-auto font-semibold">2</div>
                 <p className="text-gray-300 text-sm sm:text-base">Share the generated link with them</p>
               </div>
               <div className="space-y-3 sm:col-span-2 md:col-span-1">
-                <div className="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto font-semibold">3</div>
+                <div className="w-10 h-10 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center mx-auto font-semibold">3</div>
                 <p className="text-gray-300 text-sm sm:text-base">They see the typing animation, then get redirected to ChatGPT</p>
               </div>
             </div>
@@ -116,8 +116,8 @@ const Index = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center space-x-3">
-              <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xs">P</span>
+              <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
+                <span className="text-secondary-foreground font-bold text-xs">P</span>
               </div>
               <span className="text-gray-400 text-sm">Prompt That For You</span>
             </div>
